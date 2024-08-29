@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="struct_config_parser_1_1_config_line" kind="struct" language="C++" prot="public">
+    <compoundname>ConfigParser::ConfigLine</compoundname>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_config_parser_1_1_config_line_1a3ccf35c8ab3e380dfbf38786c0309bac" prot="public" static="no" mutable="no">
+        <type><ref refid="namespace_config_parser_1ac114dd608458b8594e1463f4f34890c5" kindref="member">ConfigType</ref></type>
+        <definition>ConfigType ConfigParser::ConfigLine::type</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <qualifiedname>ConfigParser::ConfigLine::type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/dev/c++_libs/ConfigParser/src/ConfigParser.hpp" line="91" column="12" bodyfile="E:/dev/c++_libs/ConfigParser/src/ConfigParser.hpp" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_config_parser_1_1_config_line_1a6f8f016b8033e5eda288763b60473616" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string ConfigParser::ConfigLine::content</definition>
+        <argsstring></argsstring>
+        <name>content</name>
+        <qualifiedname>ConfigParser::ConfigLine::content</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/dev/c++_libs/ConfigParser/src/ConfigParser.hpp" line="92" column="13" bodyfile="E:/dev/c++_libs/ConfigParser/src/ConfigParser.hpp" bodystart="92" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Stores config data for reading/writing config files. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="E:/dev/c++_libs/ConfigParser/src/ConfigParser.hpp" line="90" column="1" bodyfile="E:/dev/c++_libs/ConfigParser/src/ConfigParser.hpp" bodystart="90" bodyend="93"/>
+    <listofallmembers>
+      <member refid="struct_config_parser_1_1_config_line_1a6f8f016b8033e5eda288763b60473616" prot="public" virt="non-virtual"><scope>ConfigParser::ConfigLine</scope><name>content</name></member>
+      <member refid="struct_config_parser_1_1_config_line_1a3ccf35c8ab3e380dfbf38786c0309bac" prot="public" virt="non-virtual"><scope>ConfigParser::ConfigLine</scope><name>type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,191 @@
+\doxysection{Config\+Parser\+::Parser Class Reference}
+\hypertarget{class_config_parser_1_1_parser}{}\label{class_config_parser_1_1_parser}\index{ConfigParser::Parser@{ConfigParser::Parser}}
+
+
+Base class for existing parsers. Contains methods which must be overwriten to implement functionality.  
+
+
+Inheritance diagram for Config\+Parser\+::Parser\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_config_parser_1_1_parser}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_config_parser_1_1_parser_a11a1c2e1c745989f0485998190029ba6}\label{class_config_parser_1_1_parser_a11a1c2e1c745989f0485998190029ba6} 
+{\bfseries Parser} (std\+::string \+\_\+path="{}"{})
+\item 
+const std\+::string \& \mbox{\hyperlink{class_config_parser_1_1_parser_a61ad72183580e8490ccc8756b0314070}{get\+Path}} () const
+\begin{DoxyCompactList}\small\item\em Get the current path to the config file. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{namespace_config_parser_a0bd4459ac6751e6ce1f169390d4dc9d0}{Config\+Error}} \mbox{\hyperlink{class_config_parser_1_1_parser_a7fdc998a16b5bbb58be3ab6c2409213a}{get\+Error}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves currently imitted error code. \end{DoxyCompactList}\item 
+\Hypertarget{class_config_parser_1_1_parser_aa46a1714d63cfa91970807e08aaef767}\label{class_config_parser_1_1_parser_aa46a1714d63cfa91970807e08aaef767} 
+void {\bfseries flush} ()
+\begin{DoxyCompactList}\small\item\em Clears current eror state. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_config_parser_1_1_parser_a7ae8beff71dd4d207cc0d74aacc95891}{load}} (std\+::string \+\_\+path)
+\begin{DoxyCompactList}\small\item\em Loads a config file. \end{DoxyCompactList}\item 
+\Hypertarget{class_config_parser_1_1_parser_a5d7fc5f987fa169a74a785ae80e6dfc1}\label{class_config_parser_1_1_parser_a5d7fc5f987fa169a74a785ae80e6dfc1} 
+virtual void {\bfseries reload} ()
+\begin{DoxyCompactList}\small\item\em Reloads an opened config file. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_config_parser_1_1_parser_aeb04aaa7c6792d4da9f90dccc9a2fbe0}{save}} (std\+::string \+\_\+path="{}"{})
+\begin{DoxyCompactList}\small\item\em Writes config data to the file path. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_config_parser_1_1_parser_a15166678b1380d62f5c1b1c75a352f1f}\label{class_config_parser_1_1_parser_a15166678b1380d62f5c1b1c75a352f1f} 
+bool {\bfseries is\+Comment} (std\+::string str)
+\item 
+\Hypertarget{class_config_parser_1_1_parser_af580a65aa8e4ce57340c4fd40c5ce94f}\label{class_config_parser_1_1_parser_af580a65aa8e4ce57340c4fd40c5ce94f} 
+bool {\bfseries is\+Empty\+Line} (std\+::string str)
+\item 
+\Hypertarget{class_config_parser_1_1_parser_acfbfe1475036c0fe9b361165fc147b71}\label{class_config_parser_1_1_parser_acfbfe1475036c0fe9b361165fc147b71} 
+bool {\bfseries is\+Value} (const std\+::string \&str)
+\item 
+\Hypertarget{class_config_parser_1_1_parser_aa33d03d194ccfca0272124acf52b22ed}\label{class_config_parser_1_1_parser_aa33d03d194ccfca0272124acf52b22ed} 
+bool {\bfseries is\+Section} (std\+::string str)
+\begin{DoxyCompactList}\small\item\em Check if string is a section name. \end{DoxyCompactList}\item 
+\Hypertarget{class_config_parser_1_1_parser_a2503eb9bf3dc58d433bc7c3b4bf61278}\label{class_config_parser_1_1_parser_a2503eb9bf3dc58d433bc7c3b4bf61278} 
+String\+Vector {\bfseries extract\+Value} (const std\+::string \&str)
+\item 
+\Hypertarget{class_config_parser_1_1_parser_ae8e0642de541ced7d15d75bdd0513bc4}\label{class_config_parser_1_1_parser_ae8e0642de541ced7d15d75bdd0513bc4} 
+std\+::string {\bfseries extract\+Section} (std\+::string str)
+\begin{DoxyCompactList}\small\item\em Extracts a section name from string. \end{DoxyCompactList}\item 
+\Hypertarget{class_config_parser_1_1_parser_a526fd528a8473067730ef435f870c239}\label{class_config_parser_1_1_parser_a526fd528a8473067730ef435f870c239} 
+void {\bfseries append\+Line} (\mbox{\hyperlink{namespace_config_parser_ac114dd608458b8594e1463f4f34890c5}{Config\+Type}} type, std\+::string content)
+\item 
+\Hypertarget{class_config_parser_1_1_parser_a14e70fe2845235c3366a13f0f7ca51bd}\label{class_config_parser_1_1_parser_a14e70fe2845235c3366a13f0f7ca51bd} 
+void {\bfseries remove\+Line} (const std\+::string \&handle)
+\begin{DoxyCompactList}\small\item\em Removes a specified line using it\textquotesingle{}s content. \end{DoxyCompactList}\item 
+\Hypertarget{class_config_parser_1_1_parser_a29f864b5eaa097d782fea070f0382f83}\label{class_config_parser_1_1_parser_a29f864b5eaa097d782fea070f0382f83} 
+virtual void {\bfseries read\+File} ()
+\begin{DoxyCompactList}\small\item\em helper function to read file. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_config_parser_1_1_parser_a34faa0375b0101f6c1e69a6473875a79}{read}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_config_parser_1_1_parser_a0a3a4deebb08a640ac980140ae31cac7}{write}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_config_parser_1_1_parser_a6efcd493914cfe9f0a6161211640d070}{erase}} ()
+\begin{DoxyCompactList}\small\item\em Takes cair of clearing lines. (can be overwriten for implementation) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_config_parser_1_1_parser_acc52243e00b2d4a799354670c5e18b10}\label{class_config_parser_1_1_parser_acc52243e00b2d4a799354670c5e18b10} 
+static bool {\bfseries file\+Exists} (const std\+::string \&file\+Path)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_config_parser_1_1_parser_af024a302dc948b122aabec9a0d9f18ad}\label{class_config_parser_1_1_parser_af024a302dc948b122aabec9a0d9f18ad} 
+\mbox{\hyperlink{namespace_config_parser_a0bd4459ac6751e6ce1f169390d4dc9d0}{Config\+Error}} {\bfseries error\+Code}
+\item 
+\Hypertarget{class_config_parser_1_1_parser_aed2dd1ff1de6b779e1b0923c67078e90}\label{class_config_parser_1_1_parser_aed2dd1ff1de6b779e1b0923c67078e90} 
+std\+::string {\bfseries path}
+\item 
+\Hypertarget{class_config_parser_1_1_parser_acccb1f040cf317c400a6690b26844773}\label{class_config_parser_1_1_parser_acccb1f040cf317c400a6690b26844773} 
+std\+::fstream {\bfseries file}
+\item 
+\Hypertarget{class_config_parser_1_1_parser_ae230cdad3d47cf86c7a2ab6645ae33e0}\label{class_config_parser_1_1_parser_ae230cdad3d47cf86c7a2ab6645ae33e0} 
+Line\+Vector {\bfseries lines}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base class for existing parsers. Contains methods which must be overwriten to implement functionality. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_config_parser_1_1_parser_a6efcd493914cfe9f0a6161211640d070}\index{ConfigParser::Parser@{ConfigParser::Parser}!erase@{erase}}
+\index{erase@{erase}!ConfigParser::Parser@{ConfigParser::Parser}}
+\doxysubsubsection{\texorpdfstring{erase()}{erase()}}
+{\footnotesize\ttfamily \label{class_config_parser_1_1_parser_a6efcd493914cfe9f0a6161211640d070} 
+virtual void Config\+Parser\+::\+Parser\+::erase (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Takes cair of clearing lines. (can be overwriten for implementation) 
+
+
+
+Reimplemented in \mbox{\hyperlink{class_config_parser_1_1_cfg_parser_a7235c49dc60ea7f1715bccad76db0539}{Config\+Parser\+::\+Cfg\+Parser}}, and \mbox{\hyperlink{class_config_parser_1_1_ini_parser_a5f3e6f0e3096bddacd9a45c36865ed87}{Config\+Parser\+::\+Ini\+Parser}}.
+
+\Hypertarget{class_config_parser_1_1_parser_a7fdc998a16b5bbb58be3ab6c2409213a}\index{ConfigParser::Parser@{ConfigParser::Parser}!getError@{getError}}
+\index{getError@{getError}!ConfigParser::Parser@{ConfigParser::Parser}}
+\doxysubsubsection{\texorpdfstring{getError()}{getError()}}
+{\footnotesize\ttfamily \label{class_config_parser_1_1_parser_a7fdc998a16b5bbb58be3ab6c2409213a} 
+const \mbox{\hyperlink{namespace_config_parser_a0bd4459ac6751e6ce1f169390d4dc9d0}{Config\+Error}} Config\+Parser\+::\+Parser\+::get\+Error (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieves currently imitted error code. 
+
+\begin{DoxyReturn}{Returns}
+Returns a Config error enum state. 
+\end{DoxyReturn}
+\Hypertarget{class_config_parser_1_1_parser_a61ad72183580e8490ccc8756b0314070}\index{ConfigParser::Parser@{ConfigParser::Parser}!getPath@{getPath}}
+\index{getPath@{getPath}!ConfigParser::Parser@{ConfigParser::Parser}}
+\doxysubsubsection{\texorpdfstring{getPath()}{getPath()}}
+{\footnotesize\ttfamily \label{class_config_parser_1_1_parser_a61ad72183580e8490ccc8756b0314070} 
+const std\+::string \& Config\+Parser\+::\+Parser\+::get\+Path (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the current path to the config file. 
+
+\begin{DoxyReturn}{Returns}
+REturns a constant std string for file path. 
+\end{DoxyReturn}
+\Hypertarget{class_config_parser_1_1_parser_a7ae8beff71dd4d207cc0d74aacc95891}\index{ConfigParser::Parser@{ConfigParser::Parser}!load@{load}}
+\index{load@{load}!ConfigParser::Parser@{ConfigParser::Parser}}
+\doxysubsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily \label{class_config_parser_1_1_parser_a7ae8beff71dd4d207cc0d74aacc95891} 
+virtual void Config\+Parser\+::\+Parser\+::load (\begin{DoxyParamCaption}\item[{std\+::string}]{\+\_\+path}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Loads a config file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em String,file} & path. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_config_parser_1_1_parser_a34faa0375b0101f6c1e69a6473875a79}\index{ConfigParser::Parser@{ConfigParser::Parser}!read@{read}}
+\index{read@{read}!ConfigParser::Parser@{ConfigParser::Parser}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily \label{class_config_parser_1_1_parser_a34faa0375b0101f6c1e69a6473875a79} 
+virtual void Config\+Parser\+::\+Parser\+::read (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_config_parser_1_1_cfg_parser_a126b30dbb8bd2231d9dd4de9db35b84b}{Config\+Parser\+::\+Cfg\+Parser}}.
+
+\Hypertarget{class_config_parser_1_1_parser_aeb04aaa7c6792d4da9f90dccc9a2fbe0}\index{ConfigParser::Parser@{ConfigParser::Parser}!save@{save}}
+\index{save@{save}!ConfigParser::Parser@{ConfigParser::Parser}}
+\doxysubsubsection{\texorpdfstring{save()}{save()}}
+{\footnotesize\ttfamily \label{class_config_parser_1_1_parser_aeb04aaa7c6792d4da9f90dccc9a2fbe0} 
+virtual void Config\+Parser\+::\+Parser\+::save (\begin{DoxyParamCaption}\item[{std\+::string}]{\+\_\+path}{ = {\ttfamily "{}"{}}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Writes config data to the file path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em String,path} & file, where file must be saved. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_config_parser_1_1_parser_a0a3a4deebb08a640ac980140ae31cac7}\index{ConfigParser::Parser@{ConfigParser::Parser}!write@{write}}
+\index{write@{write}!ConfigParser::Parser@{ConfigParser::Parser}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily \label{class_config_parser_1_1_parser_a0a3a4deebb08a640ac980140ae31cac7} 
+virtual void Config\+Parser\+::\+Parser\+::write (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_config_parser_1_1_cfg_parser_a703a8344226a190d79ed4029a0a63f8c}{Config\+Parser\+::\+Cfg\+Parser}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/dev/c++\+\_\+libs/\+Config\+Parser/src/\mbox{\hyperlink{_config_parser_8hpp}{Config\+Parser.\+hpp}}\end{DoxyCompactItemize}

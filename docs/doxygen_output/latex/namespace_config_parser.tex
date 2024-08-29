@@ -1,0 +1,85 @@
+\doxysection{Config\+Parser Namespace Reference}
+\hypertarget{namespace_config_parser}{}\label{namespace_config_parser}\index{ConfigParser@{ConfigParser}}
+
+
+\doxylink{namespace_config_parser}{Config\+Parser} namespace.  
+
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_config_parser_1_1_cfg_parser}{Cfg\+Parser}}
+\begin{DoxyCompactList}\small\item\em CFG file type \doxylink{class_config_parser_1_1_parser}{Parser}, inherits from \doxylink{class_config_parser_1_1_parser}{Parser} class. Provides functionality for and removing sections. Each section is a \doxylink{class_config_parser_1_1_config_section}{Config\+Section} class which provides acces to it\textquotesingle{}s values. It is also possibel to loop through class sections as with values. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_config_parser_1_1_config_line}{Config\+Line}}
+\begin{DoxyCompactList}\small\item\em Stores config data for reading/writing config files. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_config_parser_1_1_config_section}{Config\+Section}}
+\begin{DoxyCompactList}\small\item\em Represents a configuration section with key-\/value pairs. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_config_parser_1_1_config_value}{Config\+Value}}
+\begin{DoxyCompactList}\small\item\em Base class for managing value data, handles different Data\+Types and uses std\+::string to store them. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_config_parser_1_1_ini_parser}{Ini\+Parser}}
+\begin{DoxyCompactList}\small\item\em Ini config file type parser, inherits from both \doxylink{class_config_parser_1_1_config_section}{Config\+Section} and \doxylink{class_config_parser_1_1_parser}{Parser} classes. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_config_parser_1_1_parser}{Parser}}
+\begin{DoxyCompactList}\small\item\em Base class for existing parsers. Contains methods which must be overwriten to implement functionality. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{namespace_config_parser_abecbdbf6db2e0932c4fbc6a2cdaccf48}\label{namespace_config_parser_abecbdbf6db2e0932c4fbc6a2cdaccf48} 
+typedef std\+::unordered\+\_\+map$<$ std\+::string, \mbox{\hyperlink{class_config_parser_1_1_config_section}{Config\+Section}} $>$ {\bfseries Section\+Map}
+\item 
+\Hypertarget{namespace_config_parser_a5eab99520dcc3076b7081d77c99000f9}\label{namespace_config_parser_a5eab99520dcc3076b7081d77c99000f9} 
+typedef std\+::vector$<$ \mbox{\hyperlink{struct_config_parser_1_1_config_line}{Config\+Line}} $>$ {\bfseries Line\+Vector}
+\item 
+\Hypertarget{namespace_config_parser_aab2c0a3f2cba3db55970f1fe37055e64}\label{namespace_config_parser_aab2c0a3f2cba3db55970f1fe37055e64} 
+typedef std\+::map$<$ std\+::string, \mbox{\hyperlink{class_config_parser_1_1_config_value}{Config\+Value}} $>$ {\bfseries Value\+Map}
+\item 
+\Hypertarget{namespace_config_parser_a0329d2e1de4b15ca65690f83f4b8d97b}\label{namespace_config_parser_a0329d2e1de4b15ca65690f83f4b8d97b} 
+typedef std\+::vector$<$ std\+::string $>$ {\bfseries String\+Vector}
+\item 
+\Hypertarget{namespace_config_parser_a8b334b0c98f04725442f3634e97669e5}\label{namespace_config_parser_a8b334b0c98f04725442f3634e97669e5} 
+using {\bfseries Keys\+Iter} = typename String\+Vector\+::iterator
+\item 
+\Hypertarget{namespace_config_parser_a0d6b6bb585afad6bf1f87989e7dfdd89}\label{namespace_config_parser_a0d6b6bb585afad6bf1f87989e7dfdd89} 
+using {\bfseries Const\+Keys\+Iter} = typename String\+Vector\+::const\+\_\+iterator
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{namespace_config_parser_a0bd4459ac6751e6ce1f169390d4dc9d0}{Config\+Error}} \{ {\bfseries FILE\+\_\+\+NOT\+\_\+\+FOUND}
+, {\bfseries FILE\+\_\+\+OPEN\+\_\+\+ERROR}
+, {\bfseries FILE\+\_\+\+READ\+\_\+\+ERROR}
+, {\bfseries NO\+\_\+\+ERROR}
+ \}
+\begin{DoxyCompactList}\small\item\em Defined error types used for file error checking. \end{DoxyCompactList}\item 
+enum class \mbox{\hyperlink{namespace_config_parser_ac114dd608458b8594e1463f4f34890c5}{Config\+Type}} \{ {\bfseries CONFIG\+\_\+\+EMPTY\+\_\+\+LINE}
+, {\bfseries CONFIG\+\_\+\+COMMENT}
+, {\bfseries CONFIG\+\_\+\+SECTION}
+, {\bfseries CONFIG\+\_\+\+VALUE}
+ \}
+\begin{DoxyCompactList}\small\item\em Config data types. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{namespace_config_parser}{Config\+Parser} namespace. 
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{namespace_config_parser_a0bd4459ac6751e6ce1f169390d4dc9d0}\index{ConfigParser@{ConfigParser}!ConfigError@{ConfigError}}
+\index{ConfigError@{ConfigError}!ConfigParser@{ConfigParser}}
+\doxysubsubsection{\texorpdfstring{ConfigError}{ConfigError}}
+{\footnotesize\ttfamily \label{namespace_config_parser_a0bd4459ac6751e6ce1f169390d4dc9d0} 
+enum class \mbox{\hyperlink{namespace_config_parser_a0bd4459ac6751e6ce1f169390d4dc9d0}{Config\+Parser\+::\+Config\+Error}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Defined error types used for file error checking. 
+
+Enum class  \Hypertarget{namespace_config_parser_ac114dd608458b8594e1463f4f34890c5}\index{ConfigParser@{ConfigParser}!ConfigType@{ConfigType}}
+\index{ConfigType@{ConfigType}!ConfigParser@{ConfigParser}}
+\doxysubsubsection{\texorpdfstring{ConfigType}{ConfigType}}
+{\footnotesize\ttfamily \label{namespace_config_parser_ac114dd608458b8594e1463f4f34890c5} 
+enum class \mbox{\hyperlink{namespace_config_parser_ac114dd608458b8594e1463f4f34890c5}{Config\+Parser\+::\+Config\+Type}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Config data types. 
+
+enum  
