@@ -64,7 +64,7 @@ Simple example of writing some arbitrary data into an INI file:
 See the documentation's examples page for more detailed usage.
 
 ## Documentation
-The documentation can be found [here]()
+The documentation can be found [here](https://still-standing88.github.io/ConfigParserDocs/)
 
 ## Library Notes
 
