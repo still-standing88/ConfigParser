@@ -1,0 +1,10 @@
+# SConstruct
+
+env = Environment()
+env.Append(CPPPATH=['../src/'])
+#msvc flags for c++ 17 and obove
+env.Append(CXXFLAGS='/std:c++20 /EHsc')
+#uncomment the following line if you're running gcc
+#env.Append(CXXFLAGS='-std=c++17')
+program = env.Program(target="ConfigParser Example",source=['example.cpp'])
+Default(program)
