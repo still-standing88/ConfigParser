@@ -35,6 +35,7 @@ Simple example of writing some arbitrary data into an INI file:
        config.save("settings.ini");
        return 0;
    }
+```
 
 ## Reading files:
 
@@ -58,6 +59,7 @@ Simple example of writing some arbitrary data into an INI file:
 
        return 0;
    }
+```
 
 See the documentation's examples page for more detailed usage.
 
