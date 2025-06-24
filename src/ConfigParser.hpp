@@ -705,7 +705,7 @@ template<typename value_type>
 		/**
 		 * @brief Reads the configuration file.
 		 */
-		virtual void read() override {
+virtual void read() override {
 			if (fileExists(path)) {
 				file.open(path, std::ios::in);
 				if (!file.is_open()) {
@@ -723,20 +723,30 @@ template<typename value_type>
 					}
 					else if (isSection(line)) {
 						std::string section_name = extractSection(line);
-						appendLine(ConfigType::CONFIG_SECTION, line);
+						appendLine(ConfigType::CONFIG_SECTION, section_name);
 						addSection(section_name);
 						bool section_end = false;
 						while (!section_end && !file.eof()) {
 							line.clear();
 							std::getline(file, line);
 							if (isEmptyLine(line)) {
+								appendLine(ConfigType::CONFIG_EMPTY_LINE, trim_copy(line));
 								section_end = true;
+							}
+							else if (isComment(line)) {
+								appendLine(ConfigType::CONFIG_COMMENT, trim_copy(line));
 							}
 							else if (isValue(line)) {
 								auto value = extractValue(line);
 								if (static_cast<int>(value.size()) >= 2) {
 									_sections[section_name][value[0]] = value[1];
 								}
+							}
+							else if (isSection(line)) {
+								std::string next_section_name = extractSection(line);
+								appendLine(ConfigType::CONFIG_SECTION, next_section_name);
+								addSection(next_section_name);
+								section_name = next_section_name;
 							}
 						}
 					}
@@ -753,12 +763,15 @@ template<typename value_type>
 		/**
 		 * @brief Writes the configuration to file.
 		 */
-		virtual void write() override {
+virtual void write() override {
 			if (!path.empty()) {
 				file.open(path, std::ios::out | std::ios::trunc);
 				if (file.is_open()) {
 					for (auto& line : lines) {
-						if (line.type == ConfigType::CONFIG_EMPTY_LINE || line.type == ConfigType::CONFIG_COMMENT) {
+						if (line.type == ConfigType::CONFIG_EMPTY_LINE) {
+							file << line.content << std::endl;
+						}
+						else if (line.type == ConfigType::CONFIG_COMMENT) {
 							file << line.content << std::endl;
 						}
 						else if (line.type == ConfigType::CONFIG_SECTION) {
@@ -767,7 +780,6 @@ template<typename value_type>
 							for (auto& value : section_) {
 								file << value << " = " << section_[value] << std::endl;
 							}
-							file << "\n" << std::endl;
 						}
 					}
 					file.close();
